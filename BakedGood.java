@@ -23,4 +23,24 @@ public class BakedGood
         this.quantity = quantity;
     }
     
+    //modify the quantity
+    public void bakeMore(int num){
+        quantity += num;
+    }
+    
+    public void sold(int num){
+        quantity -= num;
+    }
+    
+    public String toString(){
+        return name + " costs $" + price + " and we happen to have " + quantity + " left:)";
+    }
+    
+    public static void main(String[] args){
+        BakedGood croissant = new BakedGood("croissant", "butter, flower, egg yoke", 20.0, 0);
+        System.out.println(croissant);
+        //bake 10 croissant
+        croissant.bakeMore(10);
+        System.out.println(croissant);
+    }
 }
