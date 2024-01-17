@@ -33,6 +33,14 @@ public class BakedGood
         quantity -= num;
     }
     
+    //Instance method to buy some baked goods
+    public double purchase(int count){
+        if(count > this.quantity)
+            throw new IllegalArgumentException("We only have " + quantity + " left!");
+        sold(count);
+        return this.price * count;
+    }
+    
     public String toString(){
         return name + " costs $" + price + " and we happen to have " + quantity + " left:)";
     }
@@ -42,6 +50,10 @@ public class BakedGood
         System.out.println(croissant);
         //bake 10 croissant
         croissant.bakeMore(10);
+        System.out.println(croissant);
+        System.out.println("which costs $" + croissant.purchase(3));
+        System.out.println(croissant);
+        System.out.println("which costs $" +croissant.purchase(8));
         System.out.println(croissant);
     }
 }
