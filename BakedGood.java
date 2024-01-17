@@ -13,6 +13,7 @@ public class BakedGood
     private double price;
     private int quantity;
 
+    
     /**
      * Constructor for objects of class BakedGood
      */
